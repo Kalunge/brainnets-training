@@ -6,7 +6,8 @@
 
 def sum_integers(list):
   sum = 0 
-
+# iterate over all integers in list and add each to max
+# return an error in case of strings instead of integers in the list
   try:
     for num in list:
       sum += int(num)
