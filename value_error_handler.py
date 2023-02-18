@@ -5,7 +5,7 @@
 
 
 def convert_to_float(list):
-  # create a list to hold strings that can be converted to floats
+    # create a list to hold strings that can be converted to floats
     convertable_strs = []
 
     # iterate over the array of strings and try to convert them into a float
@@ -21,5 +21,24 @@ def convert_to_float(list):
     return convertable_strs
 
 
-print(convert_to_float(["1", "2", "3"]))
-print(convert_to_float(["1", "2", "3", "c"]))
+# 5. Write a function that takes a list of integers as an argument,
+#  and returns the largest integer in the list. Use a try-except block to catch any ValueError exceptions that may be raised when
+#  attempting to compare elements that are not integers.
+
+
+def largest_int(list):
+    max = 0
+    for num in list:
+        try:
+            if num > max:
+                max = num
+        except ValueError:
+            return "Only integers allowed"
+        except TypeError:
+          return "Integers cannot be compared to strings using > sign"
+
+    return max
+
+
+print(largest_int([1,2,4,77]))
+print(largest_int([1,2,4,'77']))
