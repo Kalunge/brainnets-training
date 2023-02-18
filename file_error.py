@@ -4,6 +4,8 @@
 #  the function should return the contents of the file.
 
 def read_file(file_name):
+
+  # try reading and handle error of a not found file
   try:
     file_details = open(file_name)
     print(file.read(file_details))
