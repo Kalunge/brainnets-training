@@ -59,3 +59,39 @@ def hangman():
         print("You are hanged!")
 
 hangman()
+
+''' 
+The program starts by importing the random module.
+The hangman function is defined and the word variable is assigned a random word from the list of words.
+The word_list variable is assigned a list of the letters in the word variable.
+The word_list_copy variable is assigned a copy of the word_list variable.
+The word_list_copy variable is assigned a list of "-" the same length as the word_list_copy variable.
+The tries variable is assigned the value 6.
+The used_letters variable is assigned an empty list.
+The while loop is used to run the game until the tries variable is less than or equal to 0.
+The print function is used to print the number of tries left.
+The print function is used to print the used letters.
+The print function is used to print the word.
+The guess variable is assigned the input from the user.
+The if statement is used to check if the guess variable is more than one letter.
+The print function is used to print the error message.
+The elif statement is used to check if the guess variable is not a lowercase letter.
+The print function is used to print the error message.
+The elif statement is used to check if the guess variable is in the used_letters variable.
+The print function is used to print the error message.
+The elif statement is used to check if the guess variable is in the word_list variable.
+The for loop is used to loop through the word_list variable.
+The if statement is used to check if the letter in the word_list variable is equal to the guess variable.
+The word_list_copy variable is assigned the letter in the word_list variable.
+The used_letters variable is appended with the guess variable.
+The else statement is used to run if the guess variable is not in the word_list variable.
+The print function is used to print the error message.
+The used_letters variable is appended with the guess variable.
+The tries variable is subtracted by 1.
+The if statement is used to check if the "-" is not in the word_list_copy variable.
+The print function is used to print the word.
+The break statement is used to exit the loop.
+The else statement is used to run if the tries variable is less than or equal to 0.
+The print function is used to print the error message.
+The hangman function is called.
+'''

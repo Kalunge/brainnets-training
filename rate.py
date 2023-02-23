@@ -1,22 +1,17 @@
-hours = float(input("Enter  number of hours: "))
-rate = float(input("Enter  rate per hour: "))
 
-pay = 0
+# hours = float(input("Enter  number of hours: "))
+# rate = float(input("Enter  rate per hour: "))
 
+# pay = 0
 
-
-if hours > 40:
-  try:
+def computepay(hours, rate):
+  if hours > 40:
     pay = (40 * rate) + (hours - 40) *(rate * 1.5)
-  except:
-    print("An exception occurred")
-else:
-  pay = hours * rate
+  else:
+    pay = hours * rate
+  return pay
 
-
-
-
-print(f"your pay is {pay}")
+print(computepay(45, 10))
 
 # hours = 41
 # rate = 2
