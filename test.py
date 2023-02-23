@@ -89,3 +89,33 @@
 
 
 # print(fibs(4000000))
+
+# The prime factors of 13195 are 5, 7, 13 and 29.
+
+# What is the largest prime factor of the number 600851475143 ?
+
+
+def is_prime(number):
+    factors = []
+
+    # iterate over all numbers from 1 to given number and check if they are divisible, add them to factors list if they are divisible
+    for num in range(1, number):
+        if number % num == 0:
+            factors.append(num)
+
+    if len(factors) > 2:
+        return False
+    else:
+        return True
+
+def largest_prime(num) :
+    primes = []
+    for item in range(1, num):
+        if(is_prime(item) == True):
+            primes.append(item)
+    
+    return max(primes)
+
+
+
+print(largest_prime(10))
