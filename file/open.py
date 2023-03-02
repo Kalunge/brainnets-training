@@ -24,3 +24,18 @@ open_file()
 #     print(count)
 
 # find_pattern()
+
+# find patter of emails in file mbox-short.txt and print the number of lines that match the pattern
+
+import re
+
+def email_finder():
+    count = 0
+    with open("mbox-short.txt") as f:
+        for line in f:
+            if re.search("^From: ", line):
+                count += 1
+    print(count)
+
+email_finder()
+
