@@ -1,17 +1,21 @@
-# 9. 
+# 10. 
 
-# A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
+# A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
 
-# 012   021   102   120   201   210
+#     1/2	= 	0.5
+#     1/3	= 	0.(3)
+#     1/4	= 	0.25
+#     1/5	= 	0.2
+#     1/6	= 	0.1(6)
+#     1/7	= 	0.(142857)
+#     1/8	= 	0.125
+#     1/9	= 	0.(1)
+#     1/10	= 	0.1 
 
-# What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+# Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
 
-def permute(s):
-    out = []
-    if len(s) == 1:
-        out = [s]
-    else:
-        for i, let in enumerate(s):
-            for perm in permute(s[:i] + s[i+1:]):
-                out += [let + perm]
-    return out
+# Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
+
+def cycle_length(n):
+   pass
+  
