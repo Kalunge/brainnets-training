@@ -1,19 +1,14 @@
-# 7. 
+# 8. 
 
-# Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
-# If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
+# A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
 
-# For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+# A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.
 
-# Evaluate the sum of all the amicable numbers under 10000.
+# As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
 
-def sum_amicable_numbers(n):
-    """Calculate the sum of all the amicable numbers under n."""
-    amicable_numbers = []
-    for i in range(1, n):
-        if i not in amicable_numbers:
-            sum_divisors = sum_divisors(i)
-            if sum_divisors(i) != i and sum_divisors(sum_divisors(i)) == i:
-                amicable_numbers.append(i)
-                amicable_numbers.append(sum_divisors(i))
-    return sum(amicable_numbers)
+# Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+
+def is_abundant(n):
+    """Check if a number is abundant."""
+    divisors = [i for i in range(1, n) if n % i == 0]
+    return sum(divisors) > n
