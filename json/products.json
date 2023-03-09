@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Apple iPhone 12",
+        "price": 999.00
+    },
+    {
+        "name": "Samsung Galaxy S21",
+        "price": 899.00
+    },
+    {
+        "name": "Google Pixel 5",
+        "price": 699.00
+    },
+    {
+        "name": "OnePlus 9 Pro",
+        "price": 1069.00
+    }
+]

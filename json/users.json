@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "John Smith",
+        "followers": [
+            {
+                "id": 2,
+                "name": "Jane Doe"
+            },
+            {
+                "id": 3,
+                "name": "Bob Johnson"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jane Doe",
+        "followers": [
+            {
+                "id": 1,
+                "name": "John Smith"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Bob Johnson",
+        "followers": [
+            {
+                "id": 1,
+                "name": "John Smith"
+            }
+        ]
+    }
+]

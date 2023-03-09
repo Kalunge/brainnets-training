@@ -1,0 +1,22 @@
+[
+  {
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "country": "United States"
+  },
+  {
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "country": "Canada"
+  },
+  {
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "country": "United Kingdom"
+  },
+  {
+      "name": "Alice Lee",
+      "email": "alice.lee@example.com",
+      "country": "Australia"
+  }
+]
