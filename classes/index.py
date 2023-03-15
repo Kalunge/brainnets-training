@@ -1,5 +1,6 @@
 # 1. Create a basic class: Define a class called Person with attributes like name, age, and address. Initialize the class with an instance and print the attributes.
 
+
 class Person:
     def __init__(self, name, age, address):
         self.name = name
@@ -13,7 +14,10 @@ class Person:
         print(f"Hello, my name is {self.name} and I am {self.age} years old.")
 
     def greet(self):
-        print(f"Hello From {self.name}!, I am {self.age} years old and I live in {self.address}, how About you?")
+        print(
+            f"Hello From {self.name}!, I am {self.age} years old and I live in {self.address}, how About you?"
+        )
+
 
 person = Person("Matias", 32, "Nairobi")
 print(person.name)
@@ -25,6 +29,7 @@ person.greet()
 
 # Inheritance: Create a subclass called Student that inherits from the Person class. Add a new attribute called university to the Student class and initialize it in the constructor. Also, override the introduce() method to include information about the student's university.
 
+
 class Student(Person):
     def __init__(self, name, age, address, university):
         super().__init__(name, age, address)
@@ -34,10 +39,13 @@ class Student(Person):
         return f"Student: {self.name}, {self.age}, {self.address}, {self.university}"
 
     def introduce(self):
-        print(f"Hello, my name is {self.name} and I am {self.age} years old. I am a student at {self.university}.")
+        print(
+            f"Hello, my name is {self.name} and I am {self.age} years old. I am a student at {self.university}."
+        )
 
 
 #  Polymorphism: Define a class Pet with an attribute called name and a method speak(). Create two subclasses Dog and Cat that inherit from the Pet class. Override the speak() method in the Dog and Cat classes to return a string that is specific to each type of pet.
+
 
 class Pet:
     def __init__(self, name):
@@ -46,12 +54,14 @@ class Pet:
     def speak(self):
         print("I am a Pet")
 
+
 class Dog(Pet):
     def __init__(self, name):
         super().__init__(name)
 
     def speak(self):
         print(f"{self.name} says woof!")
+
 
 class Cat(Pet):
     def __init__(self, name):
@@ -60,13 +70,15 @@ class Cat(Pet):
     def speak(self):
         print(f"{self.name} says meow!")
 
+
 dog = Dog("Rex")
 dog.speak()
 
 cat = Cat("Fluffy")
 cat.speak()
 
-#Encapsulation: Define a class called Car with private attributes like make, model, and year. Define a method called get_info() that returns a string containing the car's make, model, and year. 
+# Encapsulation: Define a class called Car with private attributes like make, model, and year. Define a method called get_info() that returns a string containing the car's make, model, and year.
+
 
 class Car:
     def __init__(self, make, model, year):
@@ -77,14 +89,16 @@ class Car:
     def get_info(self):
         return f"{self.__make} {self.__model} {self.__year}"
 
+
 car = Car("Toyota", "Corolla", 2019)
 print(car.get_info())
 
 # Class Variables: Define a class BankAccount with a class variable bank_name
-#  and instance variables account_holder_name, balance. Initialize the class 
-# variables in the constructor and add methods like deposit() and withdraw() 
-# to perform transactions. Create two instances of the BankAccount class and 
+#  and instance variables account_holder_name, balance. Initialize the class
+# variables in the constructor and add methods like deposit() and withdraw()
+# to perform transactions. Create two instances of the BankAccount class and
 # verify that the class variable is shared among all instances.
+
 
 class BankAccount:
     bank_name = "Cooperative Bank of Kenya"
@@ -112,34 +126,133 @@ account2.deposit(700)
 account2.withdraw(100)
 
 
-
 print(account1)
 print(account2)
 
 # 1. Given two lists a and b, write a list comprehension that returns a list of all pairs (x, y) where x is from list a and y is from list b, but only if x is not equal to y.
 
+
 def pair(a, b):
     return [(x, y) for x in a for y in b if x != y]
+
 
 print(pair([1, 2, 3], [4, 5, 6]))
 
 # 3. Given a string, write a list comprehension that returns a list of all the vowels in the string.
 
+
 def vowels(string):
     return [char for char in string if char in "aeiou"]
+
 
 print(vowels("Matias"))
 
 # 4. Given a list of strings, write a list comprehension that returns a list of all the words that start with a vowel.
 
-def starts_with_vowel(words):
-    return [word for word in words if word[0].lower() in "aeiou"] 
 
-print(starts_with_vowel(["eric", "Titus", "philip", "Matthew", "Esther", "arlette", "John"]))
+def starts_with_vowel(words):
+    return [word for word in words if word[0].lower() in "aeiou"]
+
+
+print(
+    starts_with_vowel(
+        ["eric", "Titus", "philip", "Matthew", "Esther", "arlette", "John"]
+    )
+)
 
 # 5. Given a list of dictionaries, write a list comprehension that returns a list of all the values for a given key.
+
 
 def values_for_key(list_of_dicts, key):
     return [d[key] for d in list_of_dicts]
 
-print(values_for_key([{"name": "Monica", "age": 11}, {"name": "James", "age": 40}], "name"))
+
+print(
+    values_for_key(
+        [{"name": "Monica", "age": 11}, {"name": "James", "age": 40}], "name"
+    )
+)
+
+# Create a class called Rectangle that has attributes width and height. Add methods area and perimeter that calculate the area and perimeter of the rectangle, respectively.
+
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+        # 3. Create a class called Car that has attributes make, model, and year. Add methods start and stop that simulate starting and stopping the car, respectively.
+
+
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def start(self):
+        print("Starting the car")
+
+    def stop(self):
+        print("Stopping the car")
+
+        # 2. Create a class called Circle that has attribute radius. Add methods area and circumference that calculate the area and circumference of the circle, respectively.
+
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius**2
+
+    def circumference(self):
+        return 2 * 3.14 * self.radius
+
+        # 1. Create a class called Dog that has attributes name and age. Add methods speak and description that print a sentence with the dog's name and age, respectively.
+
+
+# 4. Create a class called Dice that has attribute sides (the number of sides on the dice). Add a method roll that generates a random number between 1 and the number of sides on the dice.
+
+
+class Dice:
+    def __init__(self, sides):
+        self.sides = sides
+
+    def roll(self):
+        import random
+
+        return random.randint(1, self.sides)
+
+
+# 5. Create a class called Temperature that has attribute celsius (a temperature in degrees Celsius). Add methods to_fahrenheit and to_kelvin that convert the temperature to degrees Fahrenheit and Kelvin, respectively.
+
+
+class Temperature:
+    def __init__(self, celsius):
+        self.celsius = celsius
+
+    def to_fahrenheit(self):
+        return self.celsius * 9 / 5 + 32
+
+    def to_kelvin(self):
+        return self.celsius + 273.15
+
+
+# 6. Create a class called Book that has attributes title, author, and publication_year. Add a method get_age that calculates how many years ago the book was published.
+
+
+class Book:
+    def __init__(self, title, author, publication_year):
+        self.title = title
+        self.author = author
+        self.publication_year = publication_year
+
+    def get_age(self):
+        return 2020 - self.publication_year
