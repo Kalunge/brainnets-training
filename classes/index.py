@@ -256,3 +256,16 @@ class Book:
 
     def get_age(self):
         return 2020 - self.publication_year
+
+# 7. Create a class called Rectangle that has attributes width and height. Add methods __str__ and __repr__ that return a string representation of the rectangle object.
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def __str__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
+
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
