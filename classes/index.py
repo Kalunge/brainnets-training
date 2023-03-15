@@ -390,3 +390,33 @@ class Fraction:
         return False
 
 print(Fraction(49, 98).is_curious())
+
+# 4. 
+
+# 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+
+# Find the sum of all numbers which are equal to the sum of the factorial of their digits.
+
+# Note: As 1! = 1 and 2! = 2 are not sums they are not included.
+
+class Factorial:
+    def __init__(self):
+        self.factorials = [1]
+        for i in range(1, 10):
+            self.factorials.append(self.factorials[-1] * i)
+
+    def is_curious(self, n):
+        total = 0
+        while n > 0:
+            total += self.factorials[n % 10]
+            n //= 10
+        return total == n
+
+    def solve(self):
+        total = 0
+        for i in range(10, 100000):
+            if self.is_curious(i):
+                total += i
+        return total
+
+print(Factorial().solve())
