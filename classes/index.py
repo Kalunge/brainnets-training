@@ -420,3 +420,44 @@ class Factorial:
         return total
 
 print(Factorial().solve())
+
+# 5. 
+
+# The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+
+# There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+
+# How many circular primes are there below one million?
+
+class CircularPrime:
+    def __init__(self):
+        self.primes = [2]
+        self.is_prime = [False, False, True] + [True] * 999998
+
+    def is_prime(self, n):
+        if n < len(self.is_prime):
+            return self.is_prime[n]
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    def get_rotations(self, n):
+        rotations = []
+        s = str(n)
+        for i in range(len(s)):
+            rotations.append(int(s[i:] + s[:i]))
+        return rotations
+
+    def solve(self):
+        count = 0
+        for i in range(3, 1000000):
+            if self.is_prime(i):
+                self.primes.append(i)
+                rotations = self.get_rotations(i)
+                if all(self.is_prime(r) for r in rotations):
+                    count += 1
+        return count
+
+
+print(CircularPrime().solve())
