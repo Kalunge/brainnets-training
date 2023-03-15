@@ -326,3 +326,67 @@ class Pandigital:
         return sum(self.products)
 
 print(Pandigital().solve())
+
+# 3. 
+
+# The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
+
+# We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+
+# There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+
+# If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __str__(self):
+        return f"{self.numerator}/{self.denominator}"
+
+    def __repr__(self):
+        return f"Fraction({self.numerator}, {self.denominator})"
+
+    def __eq__(self, other):
+        return self.numerator * other.denominator == self.denominator * other.numerator
+
+    def __mul__(self, other):
+        return Fraction(self.numerator * other.numerator, self.denominator * other.denominator)
+
+    def __truediv__(self, other):
+        return Fraction(self.numerator * other.denominator, self.denominator * other.numerator)
+
+    def __gt__(self, other):
+        return self.numerator * other.denominator > self.denominator * other.numerator
+
+    def __lt__(self, other):
+        return self.numerator * other.denominator < self.denominator * other.numerator
+
+    def __ge__(self, other):
+        return self.numerator * other.denominator >= self.denominator * other.numerator
+
+    def __le__(self, other):
+        return self.numerator * other.denominator <= self.denominator * other.numerator
+
+    def __ne__(self, other):
+        return self.numerator * other.denominator != self.denominator * other.numerator
+
+    def simplify(self):
+        for i in range(2, self.numerator + 1):
+            if self.numerator % i == 0 and self.denominator % i == 0:
+                self.numerator //= i
+                self.denominator //= i
+                self.simplify()
+                break
+
+    def is_curious(self):
+        if self.numerator % 10 == 0 and self.denominator % 10 == 0:
+            return False
+        if self.numerator % 10 == self.denominator // 10:
+            return Fraction(self.numerator // 10, self.denominator % 10) == self
+        if self.numerator // 10 == self.denominator % 10:
+            return Fraction(self.numerator % 10, self.denominator // 10) == self
+        return False
+
+print(Fraction(49, 98).is_curious())
